@@ -187,18 +187,18 @@ class dList{
         }while(needSort);
     }
 
-    public void revert (Node currentNode, Node prevNode){
+    public void revers (Node currentNode, Node prevNode){
         if (currentNode.next == null){
             head = currentNode;
         } else{
-            revert(currentNode.next, currentNode);
+            revers(currentNode.next, currentNode);
         }
         currentNode.next = prevNode;
     }
-    public void revert (){
+    public void revers (){
         if (head != null && head.next !=null){
             Node temp = head;
-            revert(head.next, head);
+            revers(head.next, head);
             temp.next = null;
         }
     }
@@ -227,7 +227,7 @@ public class Main {
 
         list.print();
 
-        list.revert();
+        list.revers();
         
         list.print();
 
